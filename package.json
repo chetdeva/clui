@@ -22,15 +22,6 @@
         "title": "Run CLUI"
       }
     ],
-    "viewsContainers": {
-      "activitybar": [
-        {
-          "id": "cluiViewContainer",
-          "title": "CLUI",
-          "icon": "resources/clui.png"
-        }
-      ]
-    },
     "views": {
       "cluiViewContainer": [
         {

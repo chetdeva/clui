@@ -2,6 +2,8 @@
 
 CLUI adds UI to your CLI.
 
+![Screenshot](./README_resources/clui-screenshot.png)
+
 ## Features
 
 Your commands can have variables prepended with '$'. These variables will be rendered as input boxes and can be run as a CLI command.
