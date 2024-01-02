@@ -1,51 +1,48 @@
 # clui README
 
-This is the README for your extension "clui". After writing up a brief description, we recommend including the following sections.
+CLUI adds UI to your CLI.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Your commands can have variables prepended with '$'. These variables will be rendered as input boxes and can be run as a CLI command.
 
-For example if there is an image subfolder under your extension project workspace:
+## Steps to install CLUI
 
-\!\[feature X\]\(images/feature-x.png\)
+- Open VSCode
+- Install CLUI extension.
+- Click Cmd+Shift+P and type "Run CLUI".
+- Select "Run CLUI" and click enter.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Steps to run CLUI
+
+1. Enter CLI command with variables prepended with '$'.
+```
+maestro test -e USERNAME=$username -e PASSWORD=$password feature.yaml
+```
+Click "Generate CLUI" button.
+
+2. Enter variables for CLI command.
+```
+$username featureUsername
+$password featurePassword
+```
+Click "Generate CLI command"
+
+3. Run generated CLI command button.
+```
+maestro test -e USERNAME=featureUsername -e PASSWORD=featurePassword feature.yaml`
+```
+Click "Run CLI command" button.
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+Visual Studio Code 1.85.0 or higher.
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+### 0.0.1
 
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+Beta release
 
 ---
 
@@ -54,18 +51,3 @@ Added features X, Y, and Z.
 Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
 
 * [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
