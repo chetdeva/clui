@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>clui</title>
+<style>
+    body {
+      background-color: #333;
+      color: #fff;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 20px;
+    }
+    textarea, button, input {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      background-color: #222;
+      border: none;
+      color: #0f0;
+      padding: 10px;
+      font-family: 'Courier New', Courier, monospace;
+    }
+    textarea {
+      width: calc(100% - 40px);
+    }
+    button {
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0d0;
+    }
+    #cli-variables-form-container {
+      margin-top: 10px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    td {
+      padding: 5px;
+      border-bottom: 1px solid #444;
+    }
+    label {
+      margin-top: 10px;
+    }
+  </style>
+<script>
+let commands = []; // Store commands globally
+
+function init() {
+//   document.getElementById('genereate-cli-command-button').style.display = 'none';
+  document.getElementById('cli-output-command').style.display = 'none';
+  document.getElementById('run-cli-command-button').style.display = 'none';
+}
+
+document.addEventListener('DOMContentLoaded', init);
+
+function generateClui() {
+//   document.getElementById('genereate-cli-command-button').style.display = 'block';
+
+  const textarea = document.getElementById('cli-input');
+  commands = textarea.value.split('\n');
+  const container = document.getElementById('cli-variables-form-container');
+  container.innerHTML = '';
+
+  const form = document.createElement('form');
+  form.reset();
+
+  const table = document.createElement('table');
+  form.appendChild(table);
+
+  commands.forEach((command, index) => {
+    const trCommand = document.createElement('tr');
+    const tdCommand = document.createElement('td');
+    tdCommand.colSpan = 2;
+    const commandLabel = document.createElement('label');
+    commandLabel.htmlFor = 'labelCommand';
+    commandLabel.textContent = command;
+    tdCommand.appendChild(commandLabel);
+    trCommand.appendChild(tdCommand);
+    table.appendChild(trCommand);
+
+    const parts = command.split(' ');
+    parts.forEach(part => {
+      if (part.startsWith('$')) {
+        const tr = document.createElement('tr');
+        const tdLabel = document.createElement('td');
+        const label = document.createElement('label');
+        label.htmlFor = part + '-' + index;
+        label.textContent = part;
+        tdLabel.appendChild(label);
+        tr.appendChild(tdLabel);
+
+        const tdInput = document.createElement('td');
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.id = part + '-' + index;
+        input.name = part + '-' + index;
+        tdInput.appendChild(input);
+        tr.appendChild(tdInput);
+
+        table.appendChild(tr);
+      }
+    });
+  });
+
+  form.onsubmit = function(event) {
+    event.preventDefault();
+    handleCluiSubmit();
+  };
+  const submitButton = document.createElement('button');
+  submitButton.id = 'genereate-cli-command-button';
+  submitButton.type = 'submit';
+  submitButton.textContent = 'Generate CLI command';
+  form.appendChild(submitButton);
+
+  container.appendChild(form);
+}
+
+function handleCluiSubmit() {
+  document.getElementById('cli-output-command').style.display = 'block';
+  document.getElementById('run-cli-command-button').style.display = 'block';
+
+  let substitutedCommands = commands.slice(); // Clone the commands array
+
+  commands.forEach((command, index) => {
+    const parts = command.split(' ');
+    parts.forEach(part => {
+      if (part.startsWith('$')) {
+        const input = document.getElementById(part + '-' + index);
+        const value = input.value;
+        substitutedCommands[index] = substitutedCommands[index].replace(part, value);
+      }
+    });
+  });
+
+  const cliCommands = substitutedCommands.join('\n')
+  document.getElementById('cli-output-command').textContent = cliCommands;
+  const outputContainer = document.getElementById('cli-output-container');
+
+  const runCliButton = document.getElementById('run-cli-command-button');
+  runCliButton.onclick = function() {
+    runCliCommands(cliCommands);
+  };
+}
+
+function runCliCommands(commands) {
+    const vscode = acquireVsCodeApi();
+    vscode.postMessage({
+        command: 'runCliCommands',
+        commands: commands
+    });
+}
+
+</script>
+</head>
+<body>
+    <h1>CLUI 💟</h1>
+    <div id="cli-input-container"></div>
+        <h3>1. Enter CLI command with variables prepended with '$'.</h3>
+        <textarea id="cli-input"></textarea>
+        <button onclick="generateClui()">Generate CLI UI</button>
+    </div>
+
+    <div id="cli-input-variables-container">
+        <h3>2. Enter variables for CLI command.</h3>
+        <div id="cli-variables-form-container"></div>
+    </div>
+
+    <div id="cli-output-container">
+        <h3>3. Run generated CLI command.</h3>
+        <textarea id="cli-output-command"></textarea>
+        <button id="run-cli-command-button">Run CLI command</button>
+    </div>
+
+</body>
+</html>
