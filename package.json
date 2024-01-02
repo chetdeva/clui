@@ -1,6 +1,7 @@
 {
   "name": "clui",
   "displayName": "clui",
+  "publisher": "ChetanSachdeva",
   "description": "clui",
   "version": "0.0.1",
   "engines": {
