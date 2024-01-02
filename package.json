@@ -12,13 +12,13 @@
   ],
   "activationEvents": [
     "onView:cluiView",
-    "onCommand:clui.showLogin"
+    "onCommand:clui.runClui"
   ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "clui.showLogin",
+        "command": "clui.runClui",
         "title": "Run CLUI"
       }
     ],
