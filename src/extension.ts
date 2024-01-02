@@ -3,7 +3,7 @@ import * as path from 'path';
 import * as fs from 'fs';
 
 export function activate(context: vscode.ExtensionContext) {
-    const disposable = vscode.commands.registerCommand('clui.showLogin', () => {
+    const disposable = vscode.commands.registerCommand('clui.runClui', () => {
         const panel = vscode.window.createWebviewPanel(
             'cluiView',
             'CLUI',
