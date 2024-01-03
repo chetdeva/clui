@@ -1,4 +1,4 @@
-# clui README
+# CLUI
 
 CLUI adds UI to your CLI.
 
@@ -17,24 +17,24 @@ Your commands can have variables prepended with '$'. These variables will be ren
 
 ## Steps to run CLUI
 
-1. Enter CLI command with variables prepended with '$'.
+### 1. Enter CLI commands with variables prepended with '$'.
 ```
 maestro test -e USERNAME=$username -e PASSWORD=$password feature.yaml
 ```
 Click "Generate CLUI" button.
 
-2. Enter variables for CLI command.
+### 2. Enter variables for CLI commands.
 ```
 $username featureUsername
 $password featurePassword
 ```
-Click "Generate CLI command"
+Click "Generate CLI commands"
 
-3. Run generated CLI command button.
+### 3. Run generated CLI commands button.
 ```
 maestro test -e USERNAME=featureUsername -e PASSWORD=featurePassword feature.yaml`
 ```
-Click "Run CLI command" button.
+Click "Run CLI commands" button.
 
 ## Requirements
 
