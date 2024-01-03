@@ -45,7 +45,7 @@
     }
   </style>
 <script>
-  let commands = []; // Store commands globally
+let commands = []; // Store commands globally
 
 function init() {
   document.getElementById('cli-output-command').style.display = 'none';
@@ -53,6 +53,14 @@ function init() {
 }
 
 document.addEventListener('DOMContentLoaded', init);
+
+const vscode = acquireVsCodeApi();
+const postCliCommands = (commands) => {
+    vscode.postMessage({
+        command: 'runCliCommands',
+        commands: commands
+    });
+};
 
 function generateClui() {
   const textarea = document.getElementById('cli-input');
@@ -160,30 +168,27 @@ function handleCluiSubmit() {
 }
 
 function runCliCommands(commands) {
-    const vscode = acquireVsCodeApi();
-    vscode.postMessage({
-        command: 'runCliCommands',
-        commands: commands
-    });
+  postCliCommands(commands)
 }
+
 </script>
 </head>
 <body>
 
     <h1>CLUI 💟</h1>
     <div id="cli-input-container"></div>
-        <h3>1. Enter CLI command with variables prepended with '$'.</h3>
+        <h3>1. Enter CLI commands with variables prepended with '$'.</h3>
         <textarea id="cli-input"></textarea>
         <button onclick="generateClui()">Generate CLUI</button>
     </div>
 
     <div id="cli-input-variables-container">
-        <h3>2. Enter variables for CLI command.</h3>
+        <h3>2. Enter variables for CLI commands.</h3>
         <div id="cli-variables-form-container"></div>
     </div>
 
     <div id="cli-output-container">
-        <h3>3. Run generated CLI command.</h3>
+        <h3>3. Run generated CLI commands.</h3>
         <textarea id="cli-output-command"></textarea>
         <button id="run-cli-command-button">Run CLI command</button>
     </div>
