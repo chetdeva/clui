@@ -4,6 +4,7 @@
   "publisher": "ChetanSachdeva",
   "description": "clui",
   "version": "0.0.5",
+  "icon": "resources/clui-icon.png",
   "engines": {
     "vscode": "^1.85.0"
   },

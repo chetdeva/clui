@@ -1,4 +1,4 @@
-# CLUI
+# CLUI 💟
 
 CLUI adds UI to your CLI.
 
