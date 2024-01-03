@@ -10,7 +10,7 @@ export function activate(context: vscode.ExtensionContext) {
             vscode.ViewColumn.One,
             {
                 enableScripts: true,
-                localResourceRoots: [vscode.Uri.file(path.join(context.extensionPath, 'webview'))]
+                localResourceRoots: [vscode.Uri.file(path.join(context.extensionPath, 'src/webview'))]
             }
         );
 
