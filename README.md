@@ -11,7 +11,7 @@ Your commands can have variables prepended with '$'. These variables will be ren
 ## Steps to install CLUI
 
 - Open VSCode.
-- Install [CLUI](https://marketplace.visualstudio.com/manage/publishers/chetansachdeva) from VSCode extension marketplace.
+- Install [CLUI](https://marketplace.visualstudio.com/items?itemName=ChetanSachdeva.clui) from VSCode extension marketplace.
 - Click Cmd+Shift+P and type "Run CLUI".
 - Select "Run CLUI" and click enter.
 
