@@ -100,9 +100,14 @@ function generateClui() {
 
           const tdInput = document.createElement('td');
           const input = document.createElement('input');
-          input.type = 'text';
+          if (variable.toLowerCase() === 'password') {
+            input.type = 'password';
+          } else {
+            input.type = 'text';
+          }
           input.id = variable + '-' + index;
           input.name = variable + '-' + index;
+          input.required = true
           tdInput.appendChild(input);
           tr.appendChild(tdInput);
 
@@ -163,7 +168,8 @@ function handleCluiSubmit() {
 
   const runCliButton = document.getElementById('run-cli-command-button');
   runCliButton.onclick = function() {
-    runCliCommands(cliCommands);
+    const finalCliCommands = document.getElementById('cli-output-command').value;
+    runCliCommands(finalCliCommands);
   };
 }
 
