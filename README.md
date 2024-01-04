@@ -17,6 +17,8 @@ Your commands can have variables prepended with '$'. These variables will be ren
 
 ## Steps to run CLUI
 
+[CLUI](https://chetdeva.github.io/clui/) + [maestro](https://maestro.mobile.dev/) can be used for everyday mobile development of features to ease testing. Sample maestro flows can be in https://github.com/chetdeva/maestro-flows
+
 ### 1. Enter CLI commands with variables prepended with '$'.
 ```
 maestro test -e USERNAME=$USERNAME -e PASSWORD=$PASSWORD feature.yaml
@@ -45,6 +47,10 @@ Visual Studio Code 1.85.0 or higher.
 ### 0.0.8
 
 Beta release
+
+### Upcoming features
+
+- Save and share CLUI shell scripts.
 
 ## Following extension guidelines
 
