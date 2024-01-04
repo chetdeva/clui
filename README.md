@@ -19,14 +19,14 @@ Your commands can have variables prepended with '$'. These variables will be ren
 
 ### 1. Enter CLI commands with variables prepended with '$'.
 ```
-maestro test -e USERNAME=$username -e PASSWORD=$password feature.yaml
+maestro test -e USERNAME=$USERNAME -e PASSWORD=$PASSWORD feature.yaml
 ```
 Click "Generate CLUI" button.
 
 ### 2. Enter variables for CLI commands.
 ```
-$username featureUsername
-$password featurePassword
+$USERNAME featureUsername
+$PASSWORD featurePassword
 ```
 Click "Generate CLI commands"
 
@@ -42,7 +42,7 @@ Visual Studio Code 1.85.0 or higher.
 
 ## Release Notes
 
-### 0.0.1
+### 0.0.7
 
 Beta release
 
