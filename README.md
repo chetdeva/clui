@@ -44,7 +44,7 @@ Visual Studio Code 1.85.0 or higher.
 
 ## Release Notes
 
-### 0.0.8
+### 0.0.9
 
 Beta release
 
