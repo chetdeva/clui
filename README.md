@@ -46,10 +46,18 @@ Visual Studio Code 1.85.0 or higher.
 
 Beta release
 
----
-
 ## Following extension guidelines
 
 Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
 
 * [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+
+## Contributing
+
+Pull requests are welcome. For contributing, create a fork and a pull request.
+
+[How to contribute](https://github.com/MarcDiethelm/contributing/blob/master/README.md)
+
+## License
+
+[Apache License 2.0](https://choosealicense.com/licenses/apache-2.0/)
