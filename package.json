@@ -3,7 +3,7 @@
   "displayName": "clui",
   "publisher": "ChetanSachdeva",
   "description": "clui",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "icon": "resources/clui-icon.png",
   "engines": {
     "vscode": "^1.85.0"
