@@ -22,15 +22,7 @@
         "command": "clui.runClui",
         "title": "Run CLUI"
       }
-    ],
-    "views": {
-      "cluiViewContainer": [
-        {
-          "id": "cluiView",
-          "name": "CLUI View"
-        }
-      ]
-    }
+    ]
   },
   "scripts": {
     "vscode:prepublish": "npm run package",
