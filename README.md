@@ -2,6 +2,8 @@
 
 CLUI adds UI to your CLI.
 
+Medium blog: https://medium.com/@chet.deva/enhance-your-cli-experience-with-clui-96eed88929c8
+
 ![Screenshot](./README_resources/clui-screenshot.png)
 
 ## Features
@@ -17,7 +19,7 @@ Your commands can have variables prepended with '$'. These variables will be ren
 
 ## Steps to run CLUI
 
-[CLUI](https://chetdeva.github.io/clui/) + [maestro](https://maestro.mobile.dev/) can be used for everyday mobile development of features to ease testing. Sample maestro flows can be in https://github.com/chetdeva/maestro-flows
+[CLUI](https://chetdeva.github.io/clui/) + [maestro](https://maestro.mobile.dev/) an be used for everyday mobile/web development and ease E2E testing. Sample maestro flows can be in https://github.com/chetdeva/maestro-flows
 
 ### 1. Enter CLI commands with variables prepended with '$'.
 ```
@@ -44,7 +46,7 @@ Visual Studio Code 1.85.0 or higher.
 
 ## Release Notes
 
-### 0.0.9
+### 0.0.10
 
 Beta release
 
